@@ -1,0 +1,93 @@
+#include <myPlane.h>
+
+#ifndef heroMark
+#define heroMark 1
+#endif
+
+MyPlane::MyPlane(GameSound &sound):sound(sound)
+{
+    rate=0;
+    life=3;
+    death=0;
+    speed=7;
+    hero.setTexture(hero2);
+    x_y=hero2_pos;
+    hero.setPosition(x_y);
+}
+
+MyPlane::~MyPlane(){}
+
+void MyPlane::moveLeft(){
+    if(x_y.x>0){
+    x_y.x-=speed;
+    hero.setPosition(x_y);
+    }
+    hero.setTexture(hero2);
+}
+
+void MyPlane::moveRight(){
+    if(x_y.x<298){
+    x_y.x+=speed;
+    hero.setPosition(x_y);
+    }
+    hero.setTexture(hero2);
+}
+
+void MyPlane::moveUp(){
+    if(x_y.y>20){
+        x_y.y-=speed;
+        hero.setPosition(x_y);
+    }
+    hero.setTexture(hero1);
+}
+
+void MyPlane::moveDown(){
+    if(x_y.y<474){
+        x_y.y+=speed;
+        hero.setPosition(x_y);
+    }
+    hero.setTexture(hero2);
+}
+
+void MyPlane::launch(){
+    if(rate++%10==0){
+        Canvas::append(x_y,1);
+        sound.addSound();
+    }
+}
+
+void MyPlane::isDeath(){
+    death++;
+    if(death==1){
+        hero.setTexture(hero_blowup_n1);
+    }
+    if(death==2){
+        hero.setTexture(hero_blowup_n2);
+    }
+    if(death==3){
+        hero.setTexture(hero_blowup_n3);
+    }
+    if(death==4){
+        hero.setTexture(hero_blowup_n4);
+        life=0;
+        death=0;
+    }
+
+}
+
+void MyPlane::hero_hit_test(){
+    if(death==0){
+        for(int i=60;i<160;i++){
+            if(check(hero,storeSprite[i])){
+                this->isDeath();
+            }
+        }
+    }
+    if(death!=0){
+        this->isDeath();
+    }
+}
+
+sf::Sprite MyPlane::planePlay(){
+    return hero;
+}
