@@ -1,0 +1,17 @@
+#ifndef ENEMY_H_INCLUDED
+#define ENEMY_H_INCLUDED
+
+#include <canvas.h>
+#include <SFML/Graphics.hpp>
+class Enemy
+{
+private:
+    sf::Vector2f x_y;
+public:
+    Enemy(int type);//1Ϊenemy1,2Ϊenemy2,3Ϊenemy3
+    ~Enemy();
+
+};
+
+
+#endif // ENEMY_H_INCLUDED
