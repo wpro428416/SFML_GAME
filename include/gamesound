@@ -1,0 +1,22 @@
+#ifndef SOUND_H_INCLUDED
+#define SOUND_H_INCLUDED
+
+#include <SFML/Audio.hpp>
+class GameSound
+{
+private:
+    sf::SoundBuffer game_music;
+    sf::SoundBuffer bullet_music;
+    sf::Sound bullet_sound;
+    sf::Sound game_sound;
+public:
+    GameSound();
+    ~GameSound();
+    bool addSound();
+    bool changeSound();
+    void soundPlay();
+    void soundPause();
+};
+
+
+#endif // SOUND_H_INCLUDED
