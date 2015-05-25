@@ -1,0 +1,17 @@
+#include <enemy.h>
+
+
+Enemy::Enemy(int type){
+    srand(time(0)*time(0));
+    x_y.x=rand()%300;
+    x_y.y=0;
+    if(type==1){
+        Canvas::append(x_y,5);
+    }
+    if(type==2){
+        Canvas::append(x_y,6);
+    }
+}
+
+Enemy::~Enemy(){}
+
