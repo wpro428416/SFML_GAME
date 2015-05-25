@@ -1,0 +1,82 @@
+#include <backGround.h>
+
+BackGround::BackGround(){
+    this->i=0;
+
+    this->score=0;
+    sprintf(temp, "%d", score);//sprintf函数。。将int转化为char数组
+
+    main.loadFromFile("background.png");
+    this->mainSprite.setTexture(this->main);
+
+    blood.loadFromFile("heart3.png");
+    this->bloodSprite.setTexture(this->blood);
+
+    font.loadFromFile("tahomabd.ttf");
+    scoreText.setFont(font);
+    scoreText.setCharacterSize(20);
+    scoreText.setString(temp);
+    scoreText.setPosition(380,0);
+
+    game_loading1.loadFromFile("game_loading1.png");
+    game_loading2.loadFromFile("game_loading2.png");
+    game_loading3.loadFromFile("game_loading3.png");
+    game_loading4.loadFromFile("game_loading4.png");
+
+    game_pause_nor.loadFromFile("game_pause_nor.png");
+    game_pause_pressed.loadFromFile("game_pause_pressed.png");
+    game_pauseSprite.setTexture(game_pause_nor);
+
+    game_resume_nor.loadFromFile("game_resume_nor.png");
+    game_resume_pressed.loadFromFile("game_resume_pressed.png");
+    game_resumeSprite.setTexture(game_resume_nor);
+
+
+    gameover.loadFromFile("gameover.png");
+    gameoverSprite.setTexture(gameover);
+
+}
+
+BackGround::~BackGround(){}
+
+
+
+bool BackGround::changePicture(){}
+
+bool BackGround::changeBlood(){}
+
+bool BackGround::changeScore(){}
+
+sf::Sprite BackGround::mainplay(){
+    return mainSprite;
+}
+
+sf::Sprite BackGround::bloodplay(){
+    return bloodSprite;
+}
+
+sf::Text BackGround::textplay(){
+    return scoreText;
+}
+
+sf::Sprite BackGround::load(){
+    load_game.setPosition(107,281);
+    i++;
+        if(i<15){
+            load_game.setTexture(game_loading1);
+        }
+        else if(i<30){
+            load_game.setTexture(game_loading2);
+        }
+        else if(i<45){
+            load_game.setTexture(game_loading3);
+        }
+        else {
+            load_game.setTexture(game_loading4);
+        }
+        return load_game;
+}
+
+sf::Sprite BackGround::over(){
+    return gameoverSprite;
+}
