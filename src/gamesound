@@ -1,0 +1,26 @@
+#include <gamesound.h>
+#include <SFML/Audio.hpp>
+GameSound::GameSound(){
+    game_music.loadFromFile("game_music.ogg");
+    game_sound.setBuffer(game_music);
+    bullet_music.loadFromFile("bullet.ogg");
+    bullet_sound.setBuffer(bullet_music);
+    game_sound.setLoop(true);
+}
+
+GameSound::~GameSound(){}
+
+bool GameSound::changeSound(){}
+
+bool GameSound::addSound(){
+    bullet_sound.play();
+}
+
+void GameSound::soundPlay(){
+   // if(game_sound)
+    game_sound.play();
+}
+
+void GameSound::soundPause(){
+    game_sound.pause();
+}
