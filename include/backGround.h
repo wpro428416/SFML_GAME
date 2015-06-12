@@ -10,20 +10,23 @@ private:
     char temp[30];
 
     sf::Texture main;
+    sf::Texture copyright;
     sf::Sprite mainSprite;
+
 
     sf::Texture game_pause_pressed;
     sf::Texture game_pause_nor;
-    sf::Sprite game_pauseSprite;
-
     sf::Texture game_resume_nor;
     sf::Texture game_resume_pressed;
+    sf::Sprite game_pauseSprite;
     sf::Sprite game_resumeSprite;
 
     sf::Texture gameover;
     sf::Sprite gameoverSprite;
 
-    sf::Texture blood;
+    sf::Texture heart3;
+    sf::Texture heart2;
+    sf::Texture heart1;
     sf::Sprite bloodSprite;
 
     sf::Font font;
@@ -39,12 +42,13 @@ public:
     ~BackGround();
     sf::Sprite load();
     sf::Sprite over();
-    bool changeBlood();
-    bool changeScore();
+    void changeBlood(int life);
+    void changeScore(int mark);
     bool changePicture();
     sf::Sprite mainplay();
     sf::Sprite bloodplay();
     sf::Text textplay();
+    sf::Sprite pause_resume(int mark);
 };
 
 

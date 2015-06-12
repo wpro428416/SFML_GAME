@@ -1,68 +1,13 @@
-## “飞机大战”实验报告 ##
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
-**作者信息** 王炜 （2014060102022）
+#include "backGround.h"
+#include "gameSound.h"
 
-### **规定完成的任务** ###
+#include "Canvas.h"
+#include "control.h"
 
-----------
-•	任务：（规定动作，2周4次课完成，剩余2周自选动作）  
-◦	完成SFML配置，显示“SFML works”  
-◦	显示一架静止的飞机于屏幕底部  
-◦	背景音乐  
-◦	左右键，控制移动飞机  
-◦	限制左右边界  
-◦	空格键开炮，显示运动的炮弹  
-◦	炮弹飞出边界处理  
-◦	随机产生敌机，并向下运动
-◦	敌机飞出边界处理  
-◦	碰撞处理（敌机与炮弹碰撞）  
-◦	显示敌机爆炸过程  
-◦	爆炸声音  
-◦	计分及显示  
-◦	敌机炮弹处理  
-◦	被敌机击中处理（炸毁、3条命）  
-◦	过关控制（过关需要计分、游戏速度控制）
-
-
-
-
-### 额外添加的任务 ###
-
-----------
-无
-
-
-
-### 完成情况 ###
-
-----------
-完成SFML配置，显示“SFML works”  
-◦	显示一架静止的飞机于屏幕底部  
-◦	背景音乐  
-◦	左右键，控制移动飞机  
-◦	限制左右边界  
-◦	空格键开炮，显示运动的炮弹  
-◦	炮弹飞出边界处理  
-◦	随机产生敌机，并向下运动
-◦	敌机飞出边界处理  
-◦	碰撞处理（敌机与炮弹碰撞）  
-◦	显示敌机爆炸过程  
-◦	爆炸声音  
-◦	计分及显示  
-◦	敌机炮弹处理  
-◦	被敌机击中处理（炸毁、3条命）
-
-Main代码：
-	#include <SFML/Graphics.hpp>
-	#include <SFML/Audio.hpp>
-	
-	#include "backGround.h"
-	#include "gameSound.h"
-	
-	#include "Canvas.h"
-	#include "control.h"
-
-	int main(){
+int main(){
     sf::RenderWindow window(sf::VideoMode(450,650),"PLA");
     window.setFramerateLimit(60);
 
@@ -126,14 +71,3 @@ Main代码：
 
     return 0;
 }
-`
-
-游戏截图：
-
-----------
-
-
-!![](http://pica.nipic.com/2007-11-09/2007119124513598_2.jpg)
-### 评价 ###
-
-啦啦啦啦。。终于可以不用做啦。。功能差不多就好。。不可以玩就算了。。

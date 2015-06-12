@@ -7,12 +7,19 @@ class GameSound
 private:
     sf::SoundBuffer game_music;
     sf::SoundBuffer bullet_music;
+    sf::SoundBuffer over_music;
     sf::Sound bullet_sound;
     sf::Sound game_sound;
+    sf::Sound game_over;
+
+    sf::SoundBuffer enemy1_down;
+    sf::SoundBuffer enemy2_down;
+    sf::SoundBuffer enemy3_down;
+    sf::Sound enemy_down;
 public:
     GameSound();
     ~GameSound();
-    bool addSound();
+    void addSound(int mark);
     bool changeSound();
     void soundPlay();
     void soundPause();
